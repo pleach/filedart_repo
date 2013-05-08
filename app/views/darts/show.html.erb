@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dart.name %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @dart.size %>
+</p>
+
+<p>
+  <b>Percentage:</b>
+  <%= @dart.percentage %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @dart.url %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%= @dart.token %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @dart.completed %>
+</p>
+
+
+<%= link_to 'Edit', edit_dart_path(@dart) %> |
+<%= link_to 'Back', darts_path %>

@@ -1,0 +1,138 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (29.0ms)[0m  DELETE FROM "darts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "darts" ("name", "size", "percentage", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1.5, '2013-05-08 00:17:36', '2013-05-08 00:17:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "darts" ("name", "size", "percentage", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1.5, '2013-05-08 00:17:36', '2013-05-08 00:17:36', 298486374)
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mDart Load (0.3ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "darts" 
+Processing by DartsController#create as HTML
+  Parameters: {"dart"=>{"name"=>"MyString", "percentage"=>"1.5", "size"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "darts" ("created_at", "name", "percentage", "size", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 08 May 2013 00:17:36 UTC +00:00], ["name", "MyString"], ["percentage", 1.5], ["size", 1], ["updated_at", Wed, 08 May 2013 00:17:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/darts/980190963
+Completed 302 Found in 25ms (ActiveRecord: 1.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "darts" 
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "darts" 
+Processing by DartsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDart Load (0.0ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "darts" WHERE "darts"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/darts
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "darts" [0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDart Load (0.1ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DartsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDart Load (0.0ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered darts/_form.html.erb (5.5ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDart Load (0.1ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DartsController#index as HTML
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" [0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDart Load (0.1ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DartsController#new as HTML
+  Rendered darts/_form.html.erb (1.8ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by DartsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mDart Load (0.0ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by DartsController#update as HTML
+  Parameters: {"dart"=>{"name"=>"MyString", "percentage"=>"1.5", "size"=>"1"}, "id"=>"980190962"}
+  [1m[35mDart Load (0.0ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/darts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "darts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "darts" ("name", "size", "percentage", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1.5, '2013-05-08 00:17:54', '2013-05-08 00:17:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "darts" ("name", "size", "percentage", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1.5, '2013-05-08 00:17:54', '2013-05-08 00:17:54', 298486374)
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDart Load (0.2ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "darts" 
+Processing by DartsController#create as HTML
+  Parameters: {"dart"=>{"name"=>"MyString", "percentage"=>"1.5", "size"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "darts" ("created_at", "name", "percentage", "size", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 08 May 2013 00:17:54 UTC +00:00], ["name", "MyString"], ["percentage", 1.5], ["size", 1], ["updated_at", Wed, 08 May 2013 00:17:54 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/darts/980190963
+Completed 302 Found in 24ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "darts" 
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "darts" 
+Processing by DartsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "darts" WHERE "darts"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/darts
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "darts" [0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDart Load (0.1ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DartsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered darts/_form.html.erb (5.6ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDart Load (0.1ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DartsController#index as HTML
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" [0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDart Load (0.1ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DartsController#new as HTML
+  Rendered darts/_form.html.erb (1.8ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by DartsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mDart Load (0.0ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDart Load (0.1ms)[0m  [1mSELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by DartsController#update as HTML
+  Parameters: {"dart"=>{"name"=>"MyString", "percentage"=>"1.5", "size"=>"1"}, "id"=>"980190962"}
+  [1m[35mDart Load (0.0ms)[0m  SELECT "darts".* FROM "darts" WHERE "darts"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/darts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
