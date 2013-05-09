@@ -1,10 +1,13 @@
 Filedart::Application.routes.draw do
   resources :darts
 
-  match 'darts/upload_start/:name/:size' => 'darts#upload_start'
-  match 'darts/upload_update/:token/:uploaded' => 'darts#upload_update'
-  match 'darts/upload_complete/:token' => 'darts#upload_complete'
+  #match 'darts/upload_start/:name/:size' => 'darts#upload_start'
+  #match 'darts/upload_update/:token/:uploaded' => 'darts#upload_update'
+  #match 'darts/upload_complete/:token' => 'darts#upload_complete'
   
+  match '/upload_start' => 'darts#upload_start'
+  match '/upload_update' => 'darts#upload_update'
+  match '/upload_complete' => 'darts#upload_complete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
